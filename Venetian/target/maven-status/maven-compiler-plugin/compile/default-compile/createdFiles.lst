@@ -1,0 +1,9 @@
+be\pxl\venetian\service\UserService.class
+be\pxl\venetian\configuration\HelloWorldConfiguration.class
+be\pxl\venetian\model\UserLogin.class
+be\pxl\venetian\security\CustomBasicAuthenticationEntryPoint.class
+be\pxl\venetian\configuration\CORSFilter.class
+be\pxl\venetian\service\UserServiceImpl.class
+be\pxl\venetian\model\User.class
+be\pxl\venetian\configuration\HelloWorldInitializer.class
+be\pxl\venetian\controller\HelloWorldRestController.class
