@@ -47,6 +47,7 @@ public class HelloWorldRestController {
             return new ResponseEntity<List<User>>(HttpStatus.NO_CONTENT);//You many decide to return HttpStatus.NOT_FOUND
         }
         return new ResponseEntity<List<User>>(users, HttpStatus.OK);
+
     }
 
 /*
