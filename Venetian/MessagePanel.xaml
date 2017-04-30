@@ -5,17 +5,22 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Venetian"
         mc:Ignorable="d"
-        Title="Venetian" Height="378.851" Width="624.472">
-    <Grid>
-        <ListBox x:Name="listBoxReceivers" HorizontalAlignment="Left" Height="301" Margin="10,31,0,0" VerticalAlignment="Top" Width="133" SelectionChanged="listBoxReceivers_SelectionChanged"/>
-        <Label x:Name="label" Content="Contacten:" HorizontalAlignment="Left" Margin="10,5,0,0" VerticalAlignment="Top" Width="133"/>
-        <Border BorderThickness="2" BorderBrush="Black" Margin="189,31,82,78">
+        Title="Venetian" Height="423.853" Width="623.425">
+    <Grid Background="LightSteelBlue" Margin="0,0,0,-5">
+        <Border BorderThickness="2" BorderBrush="Black" Margin="10,31,459,16">
+            <ListBox x:Name="listBoxReceivers" Background="Lavender" SelectionChanged="listBoxReceivers_SelectionChanged"/>
+        </Border>
+        <Label x:Name="label" Content="Contacts" HorizontalAlignment="Left" Margin="10,5,0,0" VerticalAlignment="Top" Width="67"/>
+        <Border BorderThickness="2" BorderBrush="Black" Margin="181,31,10,92">
             <ScrollViewer Name="scrollviewerConversation">
-                <TextBlock Background="AliceBlue" x:Name="textBlockMessages" TextWrapping="Wrap" ScrollViewer.VerticalScrollBarVisibility="Auto"/>
+                <TextBlock Background="Lavender" x:Name="textBlockMessages" TextWrapping="Wrap" ScrollViewer.VerticalScrollBarVisibility="Auto"/>
             </ScrollViewer>
         </Border>
-
-        <TextBox x:Name="textBoxMessage" HorizontalAlignment="Left" Height="57" Margin="189,275,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="256"/>
-        <Button x:Name="buttonSend" Content="Verzenden" HorizontalAlignment="Left" Margin="450,275,0,0" VerticalAlignment="Top" Width="75" Height="57" Click="buttonSend_Click"/>
+        <Border BorderThickness="2" BorderBrush="Black" Margin="181,308,97,16">
+            <TextBox x:Name="textBoxMessage" Background="Lavender" TextWrapping="Wrap"/>
+        </Border>
+        <Border BorderThickness="2" BorderBrush="Black" Margin="523,308,10,16">
+            <Button x:Name="buttonSend" Background="MediumPurple" Content="Send" Click="buttonSend_Click" FontSize="14" FontWeight="Bold" />
+        </Border>
     </Grid>
 </Window>

@@ -57,7 +57,7 @@ namespace Venetian
 
             foreach (Message message in messages)
             {
-                textBlockMessages.Text += message.Date + "\n" + message.Sender.Username + ": " + message.Text + "\n";
+                textBlockMessages.Text += message.Date + "\n" + message.Sender.Username + ": " + message.Text + "\n\n";
             }
             scrollviewerConversation.ScrollToEnd();
         }
