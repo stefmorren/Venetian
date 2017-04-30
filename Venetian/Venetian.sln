@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Venetian", "Venetian\Venetian.csproj", "{B68FD16B-0F09-46D7-998C-3E294B7B278B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Venetian.DomainClasses", "Venetian.DomainClasses\Venetian.DomainClasses.csproj", "{A0BFC924-B5BB-465A-AC43-B7643C7CE938}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Venetian.DataLayer", "Venetian.DataLayer\Venetian.DataLayer.csproj", "{BD23F755-AF12-40A7-8071-40CA3DCA5EF8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B68FD16B-0F09-46D7-998C-3E294B7B278B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B68FD16B-0F09-46D7-998C-3E294B7B278B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B68FD16B-0F09-46D7-998C-3E294B7B278B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B68FD16B-0F09-46D7-998C-3E294B7B278B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A0BFC924-B5BB-465A-AC43-B7643C7CE938}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A0BFC924-B5BB-465A-AC43-B7643C7CE938}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A0BFC924-B5BB-465A-AC43-B7643C7CE938}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A0BFC924-B5BB-465A-AC43-B7643C7CE938}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD23F755-AF12-40A7-8071-40CA3DCA5EF8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD23F755-AF12-40A7-8071-40CA3DCA5EF8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD23F755-AF12-40A7-8071-40CA3DCA5EF8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD23F755-AF12-40A7-8071-40CA3DCA5EF8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
