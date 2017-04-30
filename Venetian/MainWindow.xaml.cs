@@ -73,10 +73,9 @@ namespace Venetian
             var user = _userRepository.LoginUser(username, EncryptUtility.GenerateSHA256(password + salt));
             if (user != null)
             {
-                MessageBox.Show("Succesvol ingelogd!", "Succes", MessageBoxButton.OK, MessageBoxImage.Asterisk);
                 Hide();
-                Panel panel = new Panel(user, _venetianContext);
-                panel.Show();
+                MessagePanel messagePanel = new MessagePanel(user, _venetianContext);
+                messagePanel.Show();
 
             }
             else

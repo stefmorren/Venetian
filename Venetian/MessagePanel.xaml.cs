@@ -19,13 +19,13 @@ namespace Venetian
     /// <summary>
     /// Interaction logic for Window1.xaml
     /// </summary>
-    public partial class Panel : Window
+    public partial class MessagePanel : Window
     {
         private UserRepository _userRepository;
         private MessageRepository _messageRepository;
         private User _user;
         private User _receiver;
-        public Panel(User user, VenetianContext venetianContext)
+        public MessagePanel(User user, VenetianContext venetianContext)
         {
             InitializeComponent();
             _userRepository = new UserRepository(venetianContext);
@@ -59,6 +59,7 @@ namespace Venetian
             {
                 textBlockMessages.Text += message.Date + "\n" + message.Sender.Username + ": " + message.Text + "\n";
             }
+            scrollviewerConversation.ScrollToEnd();
         }
 
         private void SetConversationLayout(bool value)
