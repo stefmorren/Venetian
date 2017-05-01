@@ -41,6 +41,7 @@ namespace Venetian
             FillReceiverList();
             SetConversationLayout(false);
             resetSteganoForm(false);
+
         }
 
         private void FillReceiverList()
@@ -139,9 +140,16 @@ namespace Venetian
 
         private void buttonEncode_Click(object sender, RoutedEventArgs e)
         {
+            //Check if text fits in image and if not empty
             if (textBoxText.Text.Length == 0)
             {
                 MessageBox.Show("The text you want to hide can't be empty", "Error", MessageBoxButton.OK,
+                    MessageBoxImage.Error);
+            }
+            else if (textBoxText.Text.Length > _image.Height * _image.Width * 0.375)
+            {
+                MessageBox.Show("This text is too long for the image.\n" +
+                                "The maximum number of characters you can use: " + Math.Floor(_image.Height * _image.Width * 0.375), "Error", MessageBoxButton.OK,
                     MessageBoxImage.Error);
             }
             else
@@ -239,7 +247,7 @@ namespace Venetian
                 textBoxImageLocation.Text = "";
                 passwordBox.IsEnabled = false;
                 checkBoxEncrypted.IsChecked = false;
-            }         
+            }
             buttonDecode.IsEnabled = value;
             buttonEncode.IsEnabled = value;
             buttonSaveImage.IsEnabled = value;
