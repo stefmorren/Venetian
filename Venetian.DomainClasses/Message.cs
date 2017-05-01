@@ -8,8 +8,12 @@ namespace Venetian.DomainClasses
         [Key]
         public int MessageId { get; set; }
         public DateTime Date { get; set; }
-        public string Text { get; set; }
+        public byte[] EncryptedText { get; set; }
+        public byte[] EncryptedAesKey { get; set; }
+        public byte[] IV { get; set; }
+        public byte[] RSAEncryptedHashedMessage { get; set; }
         public virtual User Sender { get; set; }
         public virtual User Receiver { get; set; }
+
     }
 }

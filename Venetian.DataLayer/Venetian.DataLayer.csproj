@@ -50,17 +50,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MessageRepository.cs" />
-    <Compile Include="Migrations\201704301409053_init.cs" />
-    <Compile Include="Migrations\201704301409053_init.Designer.cs">
-      <DependentUpon>201704301409053_init.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201704301727130_update.cs" />
-    <Compile Include="Migrations\201704301727130_update.Designer.cs">
-      <DependentUpon>201704301727130_update.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201704301738515_update2.cs" />
-    <Compile Include="Migrations\201704301738515_update2.Designer.cs">
-      <DependentUpon>201704301738515_update2.cs</DependentUpon>
+    <Compile Include="Migrations\201705011158351_init.cs" />
+    <Compile Include="Migrations\201705011158351_init.Designer.cs">
+      <DependentUpon>201705011158351_init.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="UserRepository.cs" />
@@ -78,14 +70,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201704301409053_init.resx">
-      <DependentUpon>201704301409053_init.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201704301727130_update.resx">
-      <DependentUpon>201704301727130_update.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201704301738515_update2.resx">
-      <DependentUpon>201704301738515_update2.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201705011158351_init.resx">
+      <DependentUpon>201705011158351_init.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
