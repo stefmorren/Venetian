@@ -5,12 +5,24 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Venetian"
         mc:Ignorable="d"
-        Title="Venetian" Height="423.853" Width="623.425">
-    <Grid Background="LightSteelBlue" Margin="0,0,0,-5">
+        Title="Venetian" Height="423.853" Width="623.425" Icon="boy_in_the_middle.ico">
+    <Window.Background>
+        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="#FFEF4DB8" Offset="0"/>
+            <GradientStop Color="#FFC844F8" Offset="1"/>
+        </LinearGradientBrush>
+    </Window.Background>
+    <Grid Margin="0,0,0,-5">
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FFEF4DB8" Offset="1"/>
+                <GradientStop Color="#FFC844F8"/>
+            </LinearGradientBrush>
+        </Grid.Background>
         <Border BorderThickness="2" BorderBrush="Black" Margin="10,31,459,16">
             <ListBox x:Name="listBoxReceivers" Background="Lavender" SelectionChanged="listBoxReceivers_SelectionChanged"/>
         </Border>
-        <Label x:Name="label" Content="Contacts" HorizontalAlignment="Left" Margin="10,5,0,0" VerticalAlignment="Top" Width="67"/>
+        <Label x:Name="label" Content="Contacts" HorizontalAlignment="Left" Margin="10,5,0,0" VerticalAlignment="Top" Width="78" FontFamily="Trajan Pro"/>
         <Border BorderThickness="2" BorderBrush="Black" Margin="181,31,10,92">
             <ScrollViewer Name="scrollviewerConversation">
                 <TextBlock Background="Lavender" x:Name="textBlockMessages" TextWrapping="Wrap" ScrollViewer.VerticalScrollBarVisibility="Auto"/>
@@ -20,7 +32,7 @@
             <TextBox x:Name="textBoxMessage" Background="Lavender" TextWrapping="Wrap"/>
         </Border>
         <Border BorderThickness="2" BorderBrush="Black" Margin="523,308,10,16">
-            <Button x:Name="buttonSend" Background="MediumPurple" Content="Send" Click="buttonSend_Click" FontSize="14" FontWeight="Bold" />
+            <Button x:Name="buttonSend" Background="#FF8F8F8F" Content="Send" Click="buttonSend_Click" FontSize="14" FontWeight="Bold" FontFamily="Trajan Pro" />
         </Border>
     </Grid>
 </Window>
