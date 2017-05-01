@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -11,6 +12,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Venetian.BusinessLayer;
 using Venetian.DataLayer;
 using Venetian.DomainClasses;
 
@@ -56,8 +58,18 @@ namespace Venetian
             textBlockMessages.Text = "";
 
             foreach (Message message in messages)
-            {
-                textBlockMessages.Text += message.Date + "\n" + message.Sender.Username + ": " + message.Text + "\n\n";
+            {   
+                string decryptedText = AESUtility.DecryptStringFromBytes_Aes(message.EncryptedText, RSAUtility.RSADecrypt(message.Receiver.PrivateKey, message.EncryptedAesKey), message.IV);
+
+                if (RSAUtility.RSAVerifySignedHash(Encoding.ASCII.GetBytes(decryptedText), message.RSAEncryptedHashedMessage, message.Sender.PublicKey))
+                {
+                    textBlockMessages.Text += message.Date + "\n" + message.Sender.Username + ": " + decryptedText + "\n\n";
+                }
+                else
+                {
+                    MessageBox.Show("Error, iemand probeert met de keys te knoeien.", "Error", MessageBoxButton.OK,
+                        MessageBoxImage.Error);
+                }
             }
             scrollviewerConversation.ScrollToEnd();
         }
@@ -79,9 +91,19 @@ namespace Venetian
             {
                 Message message = new Message();
                 message.Date = DateTime.Now;
-                message.Text = textBoxMessage.Text;
+                //message.EncryptedText = textBoxMessage.Text;
                 message.Receiver = _receiver;
                 message.Sender = _user;
+
+                using(Aes myAes = Aes.Create())
+                {
+                    byte[] encrypted = AESUtility.EncryptStringToBytes_Aes(textBoxMessage.Text, myAes.Key, myAes.IV);
+                    message.EncryptedText = encrypted;
+                    message.IV = myAes.IV;
+                    message.EncryptedAesKey = RSAUtility.RSAEncrypt(_receiver.PublicKey, myAes.Key); 
+                }
+                //Generate hash from original message & encrypted with RSA for signing
+                message.RSAEncryptedHashedMessage = RSAUtility.RSASign(_user.PrivateKey, Encoding.ASCII.GetBytes(textBoxMessage.Text));
 
                 _messageRepository.InsertMessage(message);
                 textBoxMessage.Text = "";

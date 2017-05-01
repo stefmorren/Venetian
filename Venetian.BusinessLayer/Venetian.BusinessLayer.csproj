@@ -49,8 +49,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="EncryptUtility.cs" />
+    <Compile Include="AESUtility.cs" />
+    <Compile Include="HashUtility.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RSAUtility.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Venetian.DataLayer\Venetian.DataLayer.csproj">

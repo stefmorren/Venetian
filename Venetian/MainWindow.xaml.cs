@@ -54,9 +54,9 @@ namespace Venetian
             {
                 User user = new User();
                 user.Username = username;
-                user.Salt = EncryptUtility.GenerateSalt();
-                user.Password = EncryptUtility.GenerateSHA256(password + user.Salt);
-                List<string> keys = EncryptUtility.GeneratePublicAndPrivateKeys();
+                user.Salt = HashUtility.GenerateSalt();
+                user.Password = HashUtility.GenerateSHA256FromString(password + user.Salt);
+                List<string> keys = RSAUtility.GenerateRSAPublicAndPrivateKeys();
                 user.PublicKey = keys[0];
                 user.PrivateKey = keys[1];
                 _userRepository.AddUser(user);
@@ -70,7 +70,7 @@ namespace Venetian
             string username = textboxLoginUsername.Text;
             string password = passwordBoxLogin.Password;
             string salt = _userRepository.ReturnUsersSalt(username);
-            var user = _userRepository.LoginUser(username, EncryptUtility.GenerateSHA256(password + salt));
+            var user = _userRepository.LoginUser(username, HashUtility.GenerateSHA256FromString(password + salt));
             if (user != null)
             {
                 Hide();
