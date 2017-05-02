@@ -40,19 +40,32 @@
                         <ColumnDefinition Width="723*"/>
                     </Grid.ColumnDefinitions>
                     <Border BorderBrush="Black" BorderThickness="2" Margin="2,10,402,0" Height="402" VerticalAlignment="Top" Grid.Column="1" Grid.ColumnSpan="2">
-                        <Image x:Name="imageBox"/>
+                        <Grid Background="Lavender">
+                            <Image x:Name="imageBox" />
+                        </Grid>
                     </Border>
                     <Label x:Name="label1" Content="Open image" Margin="351.076,28,244,369" Grid.Column="2"/>
                     <TextBox x:Name="textBoxImageLocation" HorizontalAlignment="Left" Height="23" Margin="359,58,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="250" Grid.Column="2"/>
-                    <Button x:Name="buttonOpenImage" Content="..." Grid.Column="2" HorizontalAlignment="Left" Margin="614,58,0,0" VerticalAlignment="Top" Width="24" Height="23" Click="buttonOpenImage_Click"/>
-                    <TextBox x:Name="textBoxText" Grid.Column="2" HorizontalAlignment="Left" Height="224" Margin="359,124,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="250"/>
+
+                    <Button x:Name="buttonOpenImage" Background="MediumPurple" Content="..." Grid.Column="2" HorizontalAlignment="Left" Margin="614,58,0,0" VerticalAlignment="Top" Width="24" Height="23" Click="buttonOpenImage_Click"/>
+                    <Border BorderBrush="Black" BorderThickness="2" Grid.Column="2" Margin="359,124,114,0" Height="215" VerticalAlignment="Top">
+                        <TextBox x:Name="textBoxText" Background="Lavender" Height="224" TextWrapping="Wrap" />
+                    </Border>
+
                     <Label x:Name="label1_Copy" Content="Message:" Margin="351,94,232,303" Grid.Column="2"/>
-                    <Button x:Name="buttonEncode" Content="Encode" Grid.Column="2" HorizontalAlignment="Left" Margin="359,392,0,0" VerticalAlignment="Top" Width="75" Click="buttonEncode_Click"/>
-                    <Button x:Name="buttonDecode" Content="Decode" Grid.Column="2" HorizontalAlignment="Left" Margin="446,392,0,0" VerticalAlignment="Top" Width="75" Click="buttonDecode_Click"/>
-                    <Button x:Name="buttonSaveImage" Content="Save image" Grid.Column="2" HorizontalAlignment="Left" Margin="534,392,0,0" VerticalAlignment="Top" Width="75" Click="buttonSaveImage_Click"/>
-                    <Label x:Name="label1_Copy1" Content="Password:" Margin="430,353,153,44" Grid.Column="2"/>
-                    <CheckBox x:Name="checkBoxEncrypted" Content="Encrypted" Grid.Column="2" HorizontalAlignment="Left" Margin="359,359,0,0" VerticalAlignment="Top" Checked="checkBoxEncrypted_Checked" Unchecked="checkBoxEncrypted_Unchecked"/>
-                    <PasswordBox x:Name="passwordBox" Grid.Column="2" HorizontalAlignment="Left" Margin="496,359,0,0" VerticalAlignment="Top" Width="113"/>
+                    <Border BorderThickness="2" BorderBrush="Black" Grid.Column="2" Margin="359,0,289,10" Height="41" VerticalAlignment="Bottom">
+                        <Button x:Name="buttonEncode" Background="MediumPurple" Content="Encode" Click="buttonEncode_Click" FontSize="14" FontWeight="Bold" />
+                    </Border>
+                    <Border BorderThickness="2" BorderBrush="Black" Grid.Column="2" HorizontalAlignment="Right" Width="83" Margin="0,371,199,10">
+                        <Button x:Name="buttonDecode" Background="MediumPurple" Content="Decode" Click="buttonDecode_Click" FontWeight="Bold" FontSize="14" />
+                    </Border>
+                    <Border BorderThickness="2" BorderBrush="Black" Grid.Column="2" Margin="529,371,114,10">
+                        <Button x:Name="buttonSaveImage" Background="MediumPurple" Content="Save as" Click="buttonSaveImage_Click" FontSize="14" FontWeight="Bold"/>
+                    </Border>
+
+                    <Label x:Name="label1_Copy1" Content="Password:" Margin="434,341,149,56" Grid.Column="2"/>
+                    <CheckBox x:Name="checkBoxEncrypted" Content="Encrypted" Grid.Column="2" HorizontalAlignment="Left" Margin="361,347,0,0" VerticalAlignment="Top" Checked="checkBoxEncrypted_Checked" Unchecked="checkBoxEncrypted_Unchecked"/>
+                    <PasswordBox x:Name="passwordBox" Grid.Column="2" HorizontalAlignment="Left" Margin="496,347,0,0" VerticalAlignment="Top" Width="113"/>
                 </Grid>
             </TabItem>
         </TabControl>
