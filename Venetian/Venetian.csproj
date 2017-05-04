@@ -112,6 +112,7 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <AppDesigner Include="Properties\" />
+    <Resource Include="Resources\TrajanPro-Regular.otf" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
