@@ -3,7 +3,7 @@ namespace Venetian.DataLayer.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class update2 : DbMigration
+    public partial class init : DbMigration
     {
         public override void Up()
         {
@@ -13,7 +13,10 @@ namespace Venetian.DataLayer.Migrations
                     {
                         MessageId = c.Int(nullable: false, identity: true),
                         Date = c.DateTime(nullable: false),
-                        Text = c.String(),
+                        EncryptedText = c.Binary(),
+                        EncryptedAesKey = c.Binary(),
+                        IV = c.Binary(),
+                        RSAEncryptedHashedMessage = c.Binary(),
                         Receiver_UserId = c.Int(),
                         Sender_UserId = c.Int(),
                     })
@@ -23,6 +26,19 @@ namespace Venetian.DataLayer.Migrations
                 .Index(t => t.Receiver_UserId)
                 .Index(t => t.Sender_UserId);
             
+            CreateTable(
+                "dbo.Users",
+                c => new
+                    {
+                        UserId = c.Int(nullable: false, identity: true),
+                        Username = c.String(),
+                        Password = c.String(),
+                        Salt = c.String(),
+                        PrivateKey = c.String(),
+                        PublicKey = c.String(),
+                    })
+                .PrimaryKey(t => t.UserId);
+            
         }
         
         public override void Down()
@@ -31,6 +47,7 @@ namespace Venetian.DataLayer.Migrations
             DropForeignKey("dbo.Messages", "Receiver_UserId", "dbo.Users");
             DropIndex("dbo.Messages", new[] { "Sender_UserId" });
             DropIndex("dbo.Messages", new[] { "Receiver_UserId" });
+            DropTable("dbo.Users");
             DropTable("dbo.Messages");
         }
     }
