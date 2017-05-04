@@ -10,6 +10,7 @@
         <Menu x:Name="menu" HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="779" >
             <MenuItem Name="bestand" Header="_Bestand">
                 <MenuItem Name="Afmelden" Header="_Afmelden"/>
+                <Separator/>
                 <MenuItem Name="MenuItemBestand" Header="_Sluiten"/>
             </MenuItem>
         </Menu>
