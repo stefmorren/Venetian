@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Venetian"
         mc:Ignorable="d"
-        Title="Venetian" Height="551.219" Width="786.99">
+        Title="Venetian" Height="551.219" Width="786.99" ResizeMode="NoResize" Closed="Window_Closed">
     <Window.Background>
         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
             <GradientStop Color="#FFEF4DB8" Offset="0"/>
@@ -35,14 +35,14 @@
                     <Label x:Name="label" Content="Contacts" HorizontalAlignment="Left" Margin="10,5,0,0" VerticalAlignment="Top" Width="67" FontWeight="Bold"/>
                     <Border BorderThickness="2" BorderBrush="Black" Margin="181,31,10,92">
                         <ScrollViewer Name="scrollviewerConversation">
-                            <TextBlock Background="Lavender" x:Name="textBlockMessages" TextWrapping="Wrap" ScrollViewer.VerticalScrollBarVisibility="Auto"/>
+                            <TextBlock Background="Lavender" x:Name="textBlockMessages" TextWrapping="Wrap" ScrollViewer.VerticalScrollBarVisibility="Auto" Padding="10"/>
                         </ScrollViewer>
                     </Border>
                     <Border BorderThickness="2" BorderBrush="Black" Margin="181,335,125,16">
                         <TextBox x:Name="textBoxMessage" Background="Lavender" TextWrapping="Wrap"/>
                     </Border>
                     <Border BorderThickness="2" BorderBrush="Black" Margin="633,335,10,16" RenderTransformOrigin="0.5,0.5">
-                        <Button x:Name="buttonSend" Background="MediumPurple" Content="Send" Click="buttonSend_Click" FontSize="14" FontWeight="Bold" />
+                        <Button x:Name="buttonSend" Background="MediumPurple" Content="Send" Click="buttonSend_Click" FontSize="14" FontWeight="Bold" IsDefault="True"/>
                     </Border>
                 </Grid>
             </TabItem>
@@ -59,7 +59,7 @@
                         </Grid>
                     </Border>
                     <Label x:Name="label1" Content="Open image" Margin="351.076,28,244,369" Grid.Column="2" FontWeight="Bold"/>
-                    <TextBox x:Name="textBoxImageLocation" HorizontalAlignment="Left" Height="23" Margin="359,58,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="279" Grid.Column="2"/>
+                    <TextBox x:Name="textBoxImageLocation" HorizontalAlignment="Left" Height="23" Margin="359,58,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="279" Grid.Column="2" IsEnabled="False"/>
 
                     <Button x:Name="buttonOpenImage" Background="MediumPurple" Content="..." Grid.Column="2" HorizontalAlignment="Left" Margin="643,58,0,0" VerticalAlignment="Top" Width="24" Height="23" Click="buttonOpenImage_Click"/>
                     <Border BorderBrush="Black" BorderThickness="2" Grid.Column="2" Margin="359,124,85,0" Height="215" VerticalAlignment="Top">

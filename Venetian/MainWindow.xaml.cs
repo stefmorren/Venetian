@@ -41,14 +41,24 @@ namespace Venetian
 
             if (_userRepository.CheckIfUsernameAllreadyExists(username))
             {
-                MessageBox.Show("De gebruikersnaam bestaat al.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("The user allready exists.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
             else if (password != passwordRepeat)
             {
-                MessageBox.Show("Wachtwoorden komen niet overeen, geef a.u.b. 2 keer hetzelfde wachtwoord op", "Error",
+                MessageBox.Show("The repeated password isn't the same as the password", "Error",
                     MessageBoxButton.OK, MessageBoxImage.Error);
                 passwordBox.Password = "";
                 passwordBoxRepeat.Password = "";
+            }
+            else if (password.Length<=6)
+            {
+                MessageBox.Show("The password must have at least 7 characters..", "Error",
+    MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            else if (username.Length <= 3)
+            {
+                MessageBox.Show("The username must have at least 4 characters.", "Error",
+    MessageBoxButton.OK, MessageBoxImage.Error);
             }
             else
             {
@@ -61,6 +71,7 @@ namespace Venetian
                 user.PrivateKey = keys[1];
                 _userRepository.AddUser(user);
                 MessageBox.Show("Succesvol geregistreerd!");
+                tabControl.SelectedIndex = 0;
             }
 
         }
@@ -80,7 +91,7 @@ namespace Venetian
             }
             else
             {
-                MessageBox.Show("Gebruikersnaam en wachtwoord komen niet overeen.", "Error", MessageBoxButton.OK,
+                MessageBox.Show("The username and the password doesn't match.", "Error", MessageBoxButton.OK,
                     MessageBoxImage.Error);
             }
 
@@ -89,6 +100,20 @@ namespace Venetian
         private void MenuMainClose_Click(object sender, RoutedEventArgs e)
         {
             Environment.Exit(0); 
+        }
+
+        private void CleanTextboxes()
+        {
+            textboxLoginUsername.Text = "";
+            textboxUsername.Text = "";
+            passwordBox.Password = "";
+            passwordBoxLogin.Password = "";
+            passwordBoxRepeat.Password = "";
+        }
+
+        private void tabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            CleanTextboxes();
         }
     }
 }

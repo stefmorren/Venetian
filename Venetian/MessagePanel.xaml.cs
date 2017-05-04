@@ -73,12 +73,12 @@ namespace Venetian
                 if (RSAUtility.RSAVerifySignedHash(Encoding.ASCII.GetBytes(decryptedText),
                     message.RSAEncryptedHashedMessage, message.Sender.PublicKey))
                 {
-                    textBlockMessages.Text += message.Date + "\n" + message.Sender.Username + ": " + decryptedText +
+                    textBlockMessages.Text += message.Date.ToString("F") + "\n" + message.Sender.Username + ": " + decryptedText +
                                               "\n\n";
                 }
                 else
                 {
-                    MessageBox.Show("Error, iemand probeert met de keys te knoeien.", "Error", MessageBoxButton.OK,
+                    MessageBox.Show("Error, someone tries to mess with the keys.", "Error", MessageBoxButton.OK,
                         MessageBoxImage.Error);
                 }
             }
@@ -94,11 +94,7 @@ namespace Venetian
 
         private void buttonSend_Click(object sender, RoutedEventArgs e)
         {
-            if (textBoxMessage.Text.Length == 0)
-            {
-                MessageBox.Show("Een bericht mag niet leeg zijn!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-            }
-            else
+            if (!(textBoxMessage.Text.Length == 0))
             {
                 Message message = new Message();
                 message.Date = DateTime.Now;
@@ -166,7 +162,7 @@ namespace Venetian
                     {
                         _image =
                             SteganographyUtility.embedText(
-                                SteganographyUtility.EncryptStringAES(textBoxText.Text, passwordBox.Password),
+                                AESUtility.EncryptStringAES(textBoxText.Text, passwordBox.Password),
                                 _image);
                         textBoxText.Text = "";
                     }
@@ -200,7 +196,7 @@ namespace Venetian
             {
                 try
                 {
-                    textBoxText.Text = SteganographyUtility.DecryptStringAES(SteganographyUtility.extractText(_image), passwordBox.Password);
+                    textBoxText.Text = AESUtility.DecryptStringAES(SteganographyUtility.extractText(_image), passwordBox.Password);
                 }
                 catch (Exception)
                 {
@@ -266,6 +262,11 @@ namespace Venetian
         }
 
         private void MenuMessageClose_Click(object sender, RoutedEventArgs e)
+        {
+            Environment.Exit(0);
+        }
+
+        private void Window_Closed(object sender, EventArgs e)
         {
             Environment.Exit(0);
         }
