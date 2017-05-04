@@ -6,6 +6,11 @@
         xmlns:local="clr-namespace:Venetian"
         mc:Ignorable="d"
         Title="Venetian" Height="354.348" Width="442.286" Icon="boy_in_the_middle.ico">
+    <Window.Resources>
+        <Style x:Key="Trajan">
+            <Setter Property="TextElement.FontFamily" Value="Resources/#Trajan Pro"/>
+        </Style>
+    </Window.Resources>
     <Window.Background>
         <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
             <GradientStop Color="#FFEF4DB8" Offset="1"/>
@@ -25,7 +30,7 @@
                     <PasswordBox x:Name="passwordBoxLogin" HorizontalAlignment="Left" Height="23" Margin="179,80,0,0" VerticalAlignment="Top" Width="192"/>
                     <Button x:Name="buttonLogin" Content="Login" IsDefault="True" HorizontalAlignment="Left" Margin="296,194,0,0" VerticalAlignment="Top" Width="75" Click="buttonLogin_Click"/>
                     <Image Source="Boy_in_the_middle.ico" Margin="15,139,293,3"/>
-                    <Label Margin="113,167,123,28" FontSize="30" FontFamily="Trajan Pro" Content="Venetian"/>
+                    <Label Margin="113,167,123,28" FontSize="30" FontFamily="./Resources/#Trajan Pro" Content="Venetian"/>
                 </Grid>
             </TabItem>
             <TabItem Header="Register">
@@ -38,7 +43,7 @@
                     <PasswordBox x:Name="passwordBoxRepeat" HorizontalAlignment="Left" Height="23" Margin="179,111,0,0" VerticalAlignment="Top" Width="192"/>
                     <Button x:Name="buttonRegister" Content="Register" IsDefault="True" HorizontalAlignment="Left" Margin="296,194,0,0" VerticalAlignment="Top" Width="75" Click="buttonRegister_Click"/>
                     <Image Source="Boy_in_the_middle.ico" Margin="15,139,293,3"/>
-                    <Label Margin="113,166,123,29" FontSize="30" FontFamily="Trajan Pro">Venetian</Label>
+                    <Label Margin="113,166,123,29" FontSize="30" FontFamily="./Resources/#Trajan Pro">Venetian</Label>
                 </Grid>
             </TabItem>
         </TabControl>
