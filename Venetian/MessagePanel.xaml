@@ -9,6 +9,7 @@
     <Grid Background="LightSteelBlue" Margin="0,0,0,-5">
         <Menu x:Name="menu" HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="779" >
             <MenuItem Name="bestand" Header="_Bestand">
+                <MenuItem Name="Afmelden" Header="_Afmelden"/>
                 <MenuItem Name="MenuItemBestand" Header="_Sluiten"/>
             </MenuItem>
         </Menu>
@@ -18,7 +19,7 @@
                     <Border BorderThickness="2" BorderBrush="Black" Margin="10,31,577,16">
                         <ListBox x:Name="listBoxReceivers" Background="Lavender" SelectionChanged="listBoxReceivers_SelectionChanged"/>
                     </Border>
-                    <Label x:Name="label" Content="Contacts" HorizontalAlignment="Left" Margin="10,5,0,0" VerticalAlignment="Top" Width="67"/>
+                    <Label x:Name="label" Content="Contacts" HorizontalAlignment="Left" Margin="10,5,0,0" VerticalAlignment="Top" Width="67" FontWeight="Bold"/>
                     <Border BorderThickness="2" BorderBrush="Black" Margin="181,31,10,92">
                         <ScrollViewer Name="scrollviewerConversation">
                             <TextBlock Background="Lavender" x:Name="textBlockMessages" TextWrapping="Wrap" ScrollViewer.VerticalScrollBarVisibility="Auto"/>
@@ -32,7 +33,7 @@
                     </Border>
                 </Grid>
             </TabItem>
-            <TabItem Header="Steganography">
+            <TabItem Header="Steganography" Margin="-2,0,-2,-2">
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="8*"/>
@@ -44,28 +45,28 @@
                             <Image x:Name="imageBox" />
                         </Grid>
                     </Border>
-                    <Label x:Name="label1" Content="Open image" Margin="351.076,28,244,369" Grid.Column="2"/>
-                    <TextBox x:Name="textBoxImageLocation" HorizontalAlignment="Left" Height="23" Margin="359,58,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="250" Grid.Column="2"/>
+                    <Label x:Name="label1" Content="Open image" Margin="351.076,28,244,369" Grid.Column="2" FontWeight="Bold"/>
+                    <TextBox x:Name="textBoxImageLocation" HorizontalAlignment="Left" Height="23" Margin="359,58,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="279" Grid.Column="2"/>
 
-                    <Button x:Name="buttonOpenImage" Background="MediumPurple" Content="..." Grid.Column="2" HorizontalAlignment="Left" Margin="614,58,0,0" VerticalAlignment="Top" Width="24" Height="23" Click="buttonOpenImage_Click"/>
-                    <Border BorderBrush="Black" BorderThickness="2" Grid.Column="2" Margin="359,124,114,0" Height="215" VerticalAlignment="Top">
+                    <Button x:Name="buttonOpenImage" Background="MediumPurple" Content="..." Grid.Column="2" HorizontalAlignment="Left" Margin="643,58,0,0" VerticalAlignment="Top" Width="24" Height="23" Click="buttonOpenImage_Click"/>
+                    <Border BorderBrush="Black" BorderThickness="2" Grid.Column="2" Margin="359,124,85,0" Height="215" VerticalAlignment="Top">
                         <TextBox x:Name="textBoxText" Background="Lavender" Height="224" TextWrapping="Wrap" />
                     </Border>
 
-                    <Label x:Name="label1_Copy" Content="Message:" Margin="351,94,232,303" Grid.Column="2"/>
-                    <Border BorderThickness="2" BorderBrush="Black" Grid.Column="2" Margin="359,0,289,10" Height="41" VerticalAlignment="Bottom">
+                    <Label x:Name="label1_Copy" Content="Message:" Margin="351,94,232,303" Grid.Column="2" FontWeight="Bold"/>
+                    <Border BorderThickness="2" BorderBrush="Black" Grid.Column="2" Width="90" Height="41" VerticalAlignment="Bottom" Margin="359,0,274,10">
                         <Button x:Name="buttonEncode" Background="MediumPurple" Content="Encode" Click="buttonEncode_Click" FontSize="14" FontWeight="Bold" />
                     </Border>
-                    <Border BorderThickness="2" BorderBrush="Black" Grid.Column="2" HorizontalAlignment="Right" Width="83" Margin="0,371,199,10">
+                    <Border BorderThickness="2" BorderBrush="Black" Grid.Column="2" HorizontalAlignment="Right" Width="90" Height="41" Margin="0,371,179,10">
                         <Button x:Name="buttonDecode" Background="MediumPurple" Content="Decode" Click="buttonDecode_Click" FontWeight="Bold" FontSize="14" />
                     </Border>
-                    <Border BorderThickness="2" BorderBrush="Black" Grid.Column="2" Margin="529,371,114,10">
+                    <Border BorderThickness="2" BorderBrush="Black" Grid.Column="2" Width="90" Height="41" Margin="548,371,85,10">
                         <Button x:Name="buttonSaveImage" Background="MediumPurple" Content="Save as" Click="buttonSaveImage_Click" FontSize="14" FontWeight="Bold"/>
                     </Border>
 
-                    <Label x:Name="label1_Copy1" Content="Password:" Margin="434,341,149,56" Grid.Column="2"/>
-                    <CheckBox x:Name="checkBoxEncrypted" Content="Encrypted" Grid.Column="2" HorizontalAlignment="Left" Margin="361,347,0,0" VerticalAlignment="Top" Checked="checkBoxEncrypted_Checked" Unchecked="checkBoxEncrypted_Unchecked"/>
-                    <PasswordBox x:Name="passwordBox" Grid.Column="2" HorizontalAlignment="Left" Margin="496,347,0,0" VerticalAlignment="Top" Width="113"/>
+                    <Label x:Name="label1_Copy1" Content="Password:" Margin="458,341,125,56" Grid.Column="2" FontWeight="Bold"/>
+                    <CheckBox x:Name="checkBoxEncrypted" Content="Encrypted" Grid.Column="2" HorizontalAlignment="Left" Margin="361,347,0,0" VerticalAlignment="Top" Checked="checkBoxEncrypted_Checked" Unchecked="checkBoxEncrypted_Unchecked" FontWeight="Bold"/>
+                    <PasswordBox x:Name="passwordBox" Grid.Column="2" HorizontalAlignment="Left" Margin="525,347,0,0" VerticalAlignment="Top" Width="113"/>
                 </Grid>
             </TabItem>
         </TabControl>

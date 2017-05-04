@@ -190,6 +190,7 @@ namespace Venetian
         private void checkBoxEncrypted_Unchecked(object sender, RoutedEventArgs e)
         {
             passwordBox.IsEnabled = false;
+            passwordBox.Password = "";
         }
 
         private void buttonDecode_Click(object sender, RoutedEventArgs e)
