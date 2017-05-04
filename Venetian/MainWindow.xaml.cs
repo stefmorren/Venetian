@@ -85,5 +85,10 @@ namespace Venetian
             }
 
         }
+
+        private void MenuMainClose_Click(object sender, RoutedEventArgs e)
+        {
+            Environment.Exit(0); 
+        }
     }
 }

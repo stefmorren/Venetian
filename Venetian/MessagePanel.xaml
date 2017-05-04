@@ -20,10 +20,10 @@
             </LinearGradientBrush>
         </Grid.Background>
         <Menu x:Name="menu" HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="779" >
-            <MenuItem Name="bestand" Header="_Bestand">
-                <MenuItem Name="Afmelden" Header="_Afmelden"/>
+            <MenuItem Name="File" Header="_File">
+                <MenuItem Name="MenuMessageSignOut" Header="_Sign out" Click="MenuMessageSignOut_Click"/>
                 <Separator/>
-                <MenuItem Name="MenuItemBestand" Header="_Sluiten"/>
+                <MenuItem Name="MenuMessageClose" Header="_Close" Click="MenuMessageClose_Click"/>
             </MenuItem>
         </Menu>
         <TabControl x:Name="tabControl" HorizontalAlignment="Left" Height="450" Margin="10,40,0,0" VerticalAlignment="Top" Width="759">
@@ -63,12 +63,12 @@
 
                     <Button x:Name="buttonOpenImage" Background="MediumPurple" Content="..." Grid.Column="2" HorizontalAlignment="Left" Margin="643,58,0,0" VerticalAlignment="Top" Width="24" Height="23" Click="buttonOpenImage_Click"/>
                     <Border BorderBrush="Black" BorderThickness="2" Grid.Column="2" Margin="359,124,85,0" Height="215" VerticalAlignment="Top">
-                        <TextBox x:Name="textBoxText" Background="Lavender" Height="224" TextWrapping="Wrap" />
+                            <TextBox x:Name="textBoxText" Background="Lavender" Height="224" TextWrapping="Wrap" ScrollViewer.VerticalScrollBarVisibility="Auto" />
                     </Border>
 
                     <Label x:Name="label1_Copy" Content="Message:" Margin="351,94,232,303" Grid.Column="2" FontWeight="Bold"/>
                     <Border BorderThickness="2" BorderBrush="Black" Grid.Column="2" Width="90" Height="41" VerticalAlignment="Bottom" Margin="359,0,274,10">
-                        <Button x:Name="buttonEncode" Background="MediumPurple" Content="Encode" Click="buttonEncode_Click" FontSize="14" FontWeight="Bold" />
+                        <Button x:Name="buttonEncode" Background="MediumPurple" Content="Encode" Click="buttonEncode_Click" FontSize="14" FontWeight="Bold" HorizontalAlignment="Right" Width="86" />
                     </Border>
                     <Border BorderThickness="2" BorderBrush="Black" Grid.Column="2" HorizontalAlignment="Right" Width="90" Height="41" Margin="0,371,179,10">
                         <Button x:Name="buttonDecode" Background="MediumPurple" Content="Decode" Click="buttonDecode_Click" FontWeight="Bold" FontSize="14" />

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
@@ -148,7 +149,7 @@ namespace Venetian
             }
             else if (textBoxText.Text.Length > _image.Height * _image.Width * 0.375)
             {
-                MessageBox.Show("This text is too long for the image.\n" +
+                MessageBox.Show("This text is too long ("+ textBoxText.Text.Length + " characters) for the image.\n" +
                                 "The maximum number of characters you can use: " + Math.Floor(_image.Height * _image.Width * 0.375), "Error", MessageBoxButton.OK,
                     MessageBoxImage.Error);
             }
@@ -255,6 +256,18 @@ namespace Venetian
             textBoxText.IsEnabled = value;
             checkBoxEncrypted.IsEnabled = value;
 
+        }
+
+        private void MenuMessageSignOut_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+            MainWindow mainWindow = new MainWindow(); 
+            mainWindow.Show();
+        }
+
+        private void MenuMessageClose_Click(object sender, RoutedEventArgs e)
+        {
+            Environment.Exit(0);
         }
     }
 }
