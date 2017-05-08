@@ -256,7 +256,7 @@ namespace Venetian
 
         private void MenuMessageSignOut_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
+            this.Hide();
             MainWindow mainWindow = new MainWindow(); 
             mainWindow.Show();
         }
