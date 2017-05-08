@@ -41,7 +41,7 @@ namespace Venetian
             _user = user;
             FillReceiverList();
             SetConversationLayout(false);
-            resetSteganoForm(false);
+            ResetSteganoForm(false);
 
         }
 
@@ -54,6 +54,7 @@ namespace Venetian
         private void listBoxReceivers_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             _receiver = (User)listBoxReceivers.SelectedValue;
+            receiverLabel.Content = _receiver.Username;
             SetConversationLayout(true);
             LoadConversations();
 
@@ -121,7 +122,7 @@ namespace Venetian
 
         private void buttonOpenImage_Click(object sender, RoutedEventArgs e)
         {
-            resetSteganoForm(false);
+            ResetSteganoForm(false);
             OpenFileDialog openFileDialog = new OpenFileDialog();
             string startdir = Environment.GetFolderPath(Environment.SpecialFolder.MyPictures);
             openFileDialog.InitialDirectory = startdir;
@@ -132,7 +133,7 @@ namespace Venetian
                 _image = new Bitmap(openFileDialog.FileName);
                 textBoxImageLocation.Text = openFileDialog.FileName;
             }
-            resetSteganoForm(true);
+            ResetSteganoForm(true);
         }
 
         private void buttonEncode_Click(object sender, RoutedEventArgs e)
@@ -235,7 +236,7 @@ namespace Venetian
             MessageBox.Show("Images succesfully saved.", "Success", MessageBoxButton.OK, MessageBoxImage.Asterisk);
         }
 
-        private void resetSteganoForm(bool value)
+        private void ResetSteganoForm(bool value)
         {
             if (value == false)
             {
@@ -256,9 +257,9 @@ namespace Venetian
 
         private void MenuMessageSignOut_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
             MainWindow mainWindow = new MainWindow(); 
             mainWindow.Show();
+            this.Close();
         }
 
         private void MenuMessageClose_Click(object sender, RoutedEventArgs e)
