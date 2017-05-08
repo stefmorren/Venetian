@@ -5,16 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Venetian"
         mc:Ignorable="d"
-<<<<<<< HEAD
         Title="Venetian" Height="354.348" Width="442.286" Icon="boy_in_the_middle.ico" ResizeMode="NoResize">
-=======
-        Title="Venetian" Height="354.348" Width="442.286" Icon="boy_in_the_middle.ico">
     <Window.Resources>
         <Style x:Key="Trajan">
             <Setter Property="TextElement.FontFamily" Value="Resources/#Trajan Pro"/>
         </Style>
     </Window.Resources>
->>>>>>> origin/master
     <Window.Background>
         <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
             <GradientStop Color="#FFEF4DB8" Offset="1"/>
