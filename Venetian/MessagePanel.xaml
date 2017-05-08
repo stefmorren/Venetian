@@ -58,27 +58,27 @@
                             <Image x:Name="imageBox" />
                         </Grid>
                     </Border>
-                    <Label x:Name="label1" Content="Open image" Margin="351.076,28,244,369" Grid.Column="2" FontWeight="Bold"/>
+                    <Label x:Name="openImageLabel" Content="Open image" FontFamily="./Resources/#Trajan Pro" Margin="351.076,28,244,369" Grid.Column="2"/>
                     <TextBox x:Name="textBoxImageLocation" HorizontalAlignment="Left" Height="23" Margin="359,58,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="279" Grid.Column="2" IsEnabled="False"/>
 
-                    <Button x:Name="buttonOpenImage" Background="MediumPurple" Content="..." Grid.Column="2" HorizontalAlignment="Left" Margin="643,58,0,0" VerticalAlignment="Top" Width="24" Height="23" Click="buttonOpenImage_Click"/>
+                    <Button x:Name="buttonOpenImage" Background="HotPink" FontFamily="./Resources/#Trajan Pro" Content="..." Grid.Column="2" HorizontalAlignment="Left" Margin="643,58,0,0" VerticalAlignment="Top" Width="24" Height="23" Click="buttonOpenImage_Click"/>
                     <Border BorderBrush="Black" BorderThickness="2" Grid.Column="2" Margin="359,124,85,0" Height="215" VerticalAlignment="Top">
                             <TextBox x:Name="textBoxText" Background="Lavender" Height="224" TextWrapping="Wrap" ScrollViewer.VerticalScrollBarVisibility="Auto" />
                     </Border>
 
-                    <Label x:Name="label1_Copy" Content="Message:" Margin="351,94,232,303" Grid.Column="2" FontWeight="Bold"/>
+                    <Label x:Name="messageLabel" Content="Message:" FontFamily="./Resources/#Trajan Pro" Margin="351,94,232,303" Grid.Column="2" FontWeight="Bold"/>
                     <Border BorderThickness="2" BorderBrush="Black" Grid.Column="2" Width="90" Height="41" VerticalAlignment="Bottom" Margin="359,0,274,10">
-                        <Button x:Name="buttonEncode" Background="MediumPurple" Content="Encode" Click="buttonEncode_Click" FontSize="14" FontWeight="Bold" HorizontalAlignment="Right" Width="86" />
+                        <Button x:Name="buttonEncode" Background="HotPink" FontFamily="./Resources/#Trajan Pro" Content="Encode" Click="buttonEncode_Click" FontSize="14" FontWeight="Bold" HorizontalAlignment="Right" Width="86" />
                     </Border>
                     <Border BorderThickness="2" BorderBrush="Black" Grid.Column="2" HorizontalAlignment="Right" Width="90" Height="41" Margin="0,371,179,10">
-                        <Button x:Name="buttonDecode" Background="MediumPurple" Content="Decode" Click="buttonDecode_Click" FontWeight="Bold" FontSize="14" />
+                        <Button x:Name="buttonDecode" Background="HotPink" FontFamily="./Resources/#Trajan Pro" Content="Decode" Click="buttonDecode_Click" FontWeight="Bold" FontSize="14" />
                     </Border>
                     <Border BorderThickness="2" BorderBrush="Black" Grid.Column="2" Width="90" Height="41" Margin="548,371,85,10">
-                        <Button x:Name="buttonSaveImage" Background="MediumPurple" Content="Save as" Click="buttonSaveImage_Click" FontSize="14" FontWeight="Bold"/>
+                        <Button x:Name="buttonSaveImage" Background="HotPink" FontFamily="./Resources/#Trajan Pro" Content="Save as" Click="buttonSaveImage_Click" FontSize="14" FontWeight="Bold"/>
                     </Border>
 
-                    <Label x:Name="label1_Copy1" Content="Password:" Margin="458,341,125,56" Grid.Column="2" FontWeight="Bold"/>
-                    <CheckBox x:Name="checkBoxEncrypted" Content="Encrypted" Grid.Column="2" HorizontalAlignment="Left" Margin="361,347,0,0" VerticalAlignment="Top" Checked="checkBoxEncrypted_Checked" Unchecked="checkBoxEncrypted_Unchecked" FontWeight="Bold"/>
+                    <Label x:Name="label1_Copy1" FontFamily="./Resources/#Trajan Pro" Content="Password:" Margin="457,343,126,54" Grid.Column="2" FontWeight="Bold" FontSize="10"/>
+                    <CheckBox x:Name="checkBoxEncrypted" FontFamily="./Resources/#Trajan Pro"  Content="Encrypted" Grid.Column="2" HorizontalAlignment="Left" Margin="359,347,0,0" VerticalAlignment="Top" Checked="checkBoxEncrypted_Checked" Unchecked="checkBoxEncrypted_Unchecked" FontWeight="Bold"/>
                     <PasswordBox x:Name="passwordBox" Grid.Column="2" HorizontalAlignment="Left" Margin="525,347,0,0" VerticalAlignment="Top" Width="113"/>
                 </Grid>
             </TabItem>
