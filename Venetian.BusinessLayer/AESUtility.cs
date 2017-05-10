@@ -7,6 +7,9 @@ namespace Venetian.BusinessLayer
 {
     public class AESUtility
     {
+        //Sources:
+        //    https://msdn.microsoft.com/en-us/library/system.security.cryptography.aes(v=vs.110).aspx
+
         private static byte[] _salt = Encoding.ASCII.GetBytes("jasdh7834y8hfeur73rsharks214");
 
         public static byte[] EncryptStringToBytes_Aes(string plainText, byte[] Key, byte[] IV)

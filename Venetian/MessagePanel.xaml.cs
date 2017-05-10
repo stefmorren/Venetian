@@ -260,7 +260,6 @@ namespace Venetian
             this.Hide();
             MainWindow mainWindow = new MainWindow(); 
             mainWindow.Show();
-            this.Close();
         }
 
         private void MenuMessageClose_Click(object sender, RoutedEventArgs e)

@@ -5,6 +5,8 @@ namespace Venetian.BusinessLayer
 {
     public class RSAUtility
     {
+        //Sources:
+        //    http://stackoverflow.com/questions/17128038/c-sharp-rsa-encryption-decryption-with-transmission
         public static List<string> GenerateRSAPublicAndPrivateKeys()
         {
             var csp = new RSACryptoServiceProvider(2048);

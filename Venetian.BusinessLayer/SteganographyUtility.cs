@@ -12,6 +12,8 @@ namespace Venetian.BusinessLayer
 {
     public class SteganographyUtility
     {
+        //Sources:
+        //    https://www.codeproject.com/Tips/635715/Steganography-Simple-Implementation-in-Csharp
         public enum State
         {
             Hiding,
