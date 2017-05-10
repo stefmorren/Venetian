@@ -9,6 +9,8 @@ namespace Venetian.BusinessLayer
 {
     public class HashUtility
     {
+        //Sources:
+        //    https://msdn.microsoft.com/en-us/library/system.security.cryptography.sha256(v=vs.110).aspx
         public static string GenerateSalt()
         {
            return Guid.NewGuid().ToString();
