@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Venetian"
         mc:Ignorable="d"
-        Title="Venetian" Height="551.219" Width="786.99" ResizeMode="NoResize" Closed="Window_Closed">
+        Title="Venetian" Height="551.219" Width="786.99" ResizeMode="NoResize" Icon="boy_in_the_middle.ico" Closed="Window_Closed">
     <Window.Background>
         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
             <GradientStop Color="#FFEF4DB8" Offset="0"/>
@@ -33,7 +33,7 @@
                         <ListBox x:Name="listBoxReceivers" Background="White" SelectionChanged="listBoxReceivers_SelectionChanged"/>
                     </Border>
                     <Label x:Name="contactsLabel" Content="Contacts" FontFamily="./Resources/#Trajan Pro" HorizontalAlignment="Left" Margin="10,5,0,0" VerticalAlignment="Top" Width="84" FontWeight="Bold"/>
-                    <Label x:Name="receiverLabel" Content="XXX" FontFamily="./Resources/#Trajan Pro" HorizontalAlignment="Left" Margin="180,5,0,0" VerticalAlignment="Top" Width="448" FontWeight="Bold"/>
+                    <Label x:Name="receiverLabel" Content="" FontFamily="./Resources/#Trajan Pro" HorizontalAlignment="Left" Margin="180,5,0,0" VerticalAlignment="Top" Width="448" FontWeight="Bold"/>
                     <Border BorderThickness="2" BorderBrush="Black" Margin="181,31,10,92">
                         <ScrollViewer Name="scrollviewerConversation">
                             <TextBlock Background="White" x:Name="textBlockMessages" TextWrapping="Wrap" ScrollViewer.VerticalScrollBarVisibility="Auto" Padding="10"/>
